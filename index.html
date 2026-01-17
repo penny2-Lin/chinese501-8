@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>間諜家家酒：語詞守護任務</title>
+    <style>
+        :root {
+            --bg-color: #0d1117; /* 深色背景 */
+            --container-bg: rgba(30, 39, 50, 0.9);
+            --text-color: #ffffff; /* 強制白字 */
+            --accent-color: #58a6ff;
+            --correct-color: #3fb950;
+            --wrong-color: #f85149;
+        }
+        body {
+            margin: 0;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100dvh;
+            overflow: hidden;
+        }
+        header {
+            background: #161b22;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            flex-shrink: 0;
+        }
+        h1 { margin: 0 0 5px 0; font-size: 1.6rem; color: #79c0ff; }
+        header p { margin: 0; font-size: 0.9rem; color: #8b949e; }
+
+        #story-box {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+            line-height: 2.5;
+            font-size: 1.3rem;
+            background: var(--container-bg);
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .drop-zone {
+            border-bottom: 2px solid red; /* 紅線對齊 */
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+            line-height: 1.2;
+            padding-bottom: 0px;
+            vertical-align: bottom;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #ffeb3b; /* 待填入顏色 */
+            font-weight: bold;
+        }
+        .correct { color: var(--correct-color); border-bottom: 2px solid var(--correct-color); }
+        .wrong { color: var(--wrong-color); border-bottom: 2px solid var(--wrong-color); }
+
+        footer {
+            background: #161b22;
+            padding: 15px;
+            border-top: 1px solid #30363d;
+            flex-shrink: 0;
+        }
+        #word-bank {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .word-card {
+            background: #21262d;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid #30363d;
+            font-size: 1.1rem;
+            transition: transform 0.1s;
+        }
+        .word-card:active { transform: scale(0.95); }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        #check-btn { background: #238636; color: white; }
+        #reset-btn { background: #484f58; color: white; }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🕵️ 間諜家家酒：守護語詞任務</h1>
+    <p>請將下方詞語點擊或拖拉至紅線空格處</p>
+</header>
+
+<div id="story-box">
+    在東國與西國維持著脆弱和平的時代，西國頂尖間諜「黃昏」接到了一項特殊的絕密任務。他在檔案中讀到，在遙遠的 <span class="drop-zone" data-answer="巴基斯坦"></span> 地區，曾經發生過為了理想而奮鬥的故事。這次，他的任務是潛入一個企圖在東國邊界製造混亂的極端 <span class="drop-zone" data-answer="組織"></span> 。這個集團認為知識會喚醒平民的意志，因此他們試圖透過 <span class="drop-zone" data-answer="控制"></span> 媒體與學校，切斷所有孩子的學習管道。對黃昏（洛伊德）而言，這不只是任務，更關係到他的女兒安妮亞能否繼續在伊甸學院快樂上學，因為安妮亞身為一名小小的 <span class="drop-zone" data-answer="女性"></span> ，也正努力在校園中透過知識改變命運。<br><br>
+    某個深夜，該組織悄悄滲透了東國最大的電台，準備利用強大的 <span class="drop-zone" data-answer="廣播"></span> 訊號向全國播送洗腦宣言。他們不僅計畫 <span class="drop-zone" data-answer="霸占"></span> 所有公共頻道，更準備在各大城市的重要樞紐安置爆炸裝置，試圖用 <span class="drop-zone" data-answer="恐怖"></span> 的氛圍讓民眾屈服。安妮亞透過讀心術意外發現，該組織的領袖竟然想徹底廢除女孩們的 <span class="drop-zone" data-answer="受教權"></span> ，這讓她感到無比的 <span class="drop-zone" data-answer="恐懼"></span> ，因為她最喜歡和朋友一起在圖書館看《龐德曼》漫畫了！<br><br>
+    戰鬥隨即展開。洛伊德換上偽裝，攜帶高性能的間諜 <span class="drop-zone" data-answer="武器"></span> 潛入電台大樓。與此同時，「睡美人」約兒也收到了清除這批非法分子的委託。該組織對洛伊德發動了猛烈的 <span class="drop-zone" data-answer="攻擊"></span> ，槍林彈雨中，洛伊德雖然身經百戰，卻也因為掩護人質而讓手臂意外 <span class="drop-zone" data-answer="受傷"></span> 。面對敵人的死亡 <span class="drop-zone" data-answer="威脅"></span> ，洛伊德並沒有退縮，他深知知識的力量遠比子彈更強大。在大樓後方，約兒以俐落的身手瞬間制服了外圍的武裝份子，那一幕對在場所有被脅迫的人來說，都是極大的視覺 <span class="drop-zone" data-answer="震撼"></span> 。<br><br>
+    最終，在佛傑一家（甚至還有預知能力的狗狗龐德）的默契配合下，組織的陰謀被徹底粉碎。播音室內原本要播放的洗腦宣言，變成了溫柔的古典樂。經過幾天的休養，洛伊德的傷口已經完全 <span class="drop-zone" data-answer="康復"></span> 。安妮亞又回到了學校，她看著黑板上的文字，心裡明白這一切得來不易。這次事件後，原本籠罩在城市上空的陰霾散去，人們開始重視並守護每一位孩子的學習機會。
+</div>
+
+<footer>
+    <div id="word-bank"></div>
+    <div class="btn-group">
+        <button id="check-btn" onclick="checkResults()">檢查任務結果</button>
+        <button id="reset-btn" onclick="resetGame()">重置遊戲</button>
+    </div>
+</footer>
+
+<script>
+    const words = ["巴基斯坦", "女性", "恐怖", "組織", "霸占", "廣播", "控制", "受傷", "攻擊", "受教權", "威脅", "康復", "武器", "震撼", "恐懼"];
+    const bank = document.getElementById('word-bank');
+    const zones = document.querySelectorAll('.drop-zone');
+
+    function init() {
+        bank.innerHTML = '';
+        const shuffled = [...words].sort(() => Math.random() - 0.5);
+        shuffled.forEach(w => {
+            const div = document.createElement('div');
+            div.className = 'word-card';
+            div.innerText = w;
+            div.draggable = true;
+            div.onclick = () => fillNextEmpty(w);
+            div.ondragstart = (e) => e.dataTransfer.setData('text', w);
+            bank.appendChild(div);
+        });
+    }
+
+    function fillNextEmpty(w) {
+        for (let z of zones) {
+            if (!z.innerText) {
+                z.innerText = w;
+                z.className = 'drop-zone';
+                break;
+            }
+        }
+    }
+
+    zones.forEach(z => {
+        z.onclick = () => { z.innerText = ''; z.className = 'drop-zone'; };
+        z.ondragover = (e) => e.preventDefault();
+        z.ondrop = (e) => {
+            e.preventDefault();
+            z.innerText = e.dataTransfer.getData('text');
+            z.className = 'drop-zone';
+        };
+    });
+
+    function checkResults() {
+        let win = true;
+        zones.forEach(z => {
+            if (z.innerText === z.dataset.answer) {
+                z.className = 'drop-zone correct';
+            } else {
+                z.className = 'drop-zone wrong';
+                win = false;
+            }
+        });
+        if (win) alert('🌟 任務達成！安妮亞可以安心去上學了！');
+    }
+
+    function resetGame() {
+        zones.forEach(z => { z.innerText = ''; z.className = 'drop-zone'; });
+        init();
+    }
+
+    init();
+</script>
+</body>
+</html>
